@@ -1,6 +1,7 @@
 package view;
 
 import Utils.ConexaoSQLITE;
+import Utils.CriarBdSqlite;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.sql.PreparedStatement;
@@ -79,8 +80,8 @@ public class Tela_Log extends javax.swing.JFrame {
         conexao.conectar();
         //conexao = ModuloConexao.conector();
         //boolean conexao = new ConexaoSQLITE().conectar();
-        //CriarBdSqlite criarBdSqlite = new CriarBdSqlite(connSQLite);
-        //criarBdSqlite.criarTabelaUsuarios();
+        CriarBdSqlite criarBdSqlite = new CriarBdSqlite(conexao);
+        criarBdSqlite.criarTabelas();
         //conexao.conectar();
         //connSQLite.desconectar();
         // serve de apoio ao estatus da conexao
