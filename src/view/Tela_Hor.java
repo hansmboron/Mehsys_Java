@@ -321,7 +321,7 @@ public class Tela_Hor extends javax.swing.JInternalFrame {
                     // "os" tem que ser igual à variavel criada no Jaspersoft
 
                     // usuando a classe JasperPrint para preparar a impressoa do relatorio
-                    JasperPrint print = JasperFillManager.fillReport("rel/relUm_sal.jasper", filtro, conexao.getConexao());
+                    JasperPrint print = JasperFillManager.fillReport("rel/rel_comprovante.jasper", filtro, conexao.getConexao());
                     // a linha abaixo exibe o relatório atraves da classe JasperViwer
                     JasperViewer.viewReport(print, false);
 

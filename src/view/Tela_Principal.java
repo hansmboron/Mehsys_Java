@@ -366,7 +366,7 @@ public class Tela_Principal extends javax.swing.JFrame {
             // imprimindo relatório com jasperreport
             try {
                 // imprimindo relatorios com jasperreportes
-                JasperPrint print = JasperFillManager.fillReport("rel/relCli_sal.jasper", null, conexao.getConexao());
+                JasperPrint print = JasperFillManager.fillReport("rel/rel_clientes.jasper", null, conexao.getConexao());
                 // exibe o relatório
                 JasperViewer.viewReport(print, false);
             } catch (JRException e) {
@@ -382,7 +382,7 @@ public class Tela_Principal extends javax.swing.JFrame {
             // imprimindo relatório com jasperreport
             try {
                 // imprimindo relatorios com jasperreportes
-                JasperPrint print = JasperFillManager.fillReport("rel/relSer_sal.jasper", null, conexao.getConexao());
+                JasperPrint print = JasperFillManager.fillReport("rel/rel_servicos.jasper", null, conexao.getConexao());
                 // exibe o relatório
                 JasperViewer.viewReport(print, false);
             } catch (JRException e) {
@@ -398,7 +398,7 @@ public class Tela_Principal extends javax.swing.JFrame {
             // imprimindo relatório com jasperreport
             try {
                 // imprimindo relatorios com jasperreportes
-                JasperPrint print = JasperFillManager.fillReport("rel/relHor_sal.jasper", null, conexao.getConexao());
+                JasperPrint print = JasperFillManager.fillReport("rel/rel_horarios.jasper", null, conexao.getConexao());
                 // exibe o relatório
                 JasperViewer.viewReport(print, false);
             } catch (JRException e) {
