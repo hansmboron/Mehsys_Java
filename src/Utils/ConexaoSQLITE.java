@@ -18,10 +18,11 @@ public class ConexaoSQLITE {
     // conecta ou cria se não existir um banco de dados local
     public boolean conectar() {
         String driver = "org.sqlite.JDBC";
-        String url = "jdbc:sqlite:db/dbmehsys.db";
+        String url = "jdbc:sqlite:dbmehsys.db";
         try {
             Class.forName(driver);
             this.conexao = DriverManager.getConnection(url);
+            System.out.println("Conectado");
             return true;
         } catch (ClassNotFoundException | SQLException e) {
             return false;
@@ -51,7 +52,6 @@ public class ConexaoSQLITE {
      */
     public PreparedStatement criarPreparedStatement(String sql) {
         try {
-            System.out.println("Executando");
             return this.conexao.prepareStatement(sql);
         } catch (SQLException e) {
             System.err.println(e.getMessage());

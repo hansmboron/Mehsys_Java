@@ -311,13 +311,18 @@ public class Tela_Hor extends javax.swing.JInternalFrame {
     // imprimindo uma ordem se serviço
     private void imprimir_age() {
         if (!txtId_hor.getText().isEmpty()) {
-            int confirma = JOptionPane.showConfirmDialog(null, "Confirma a impresão do agendamento número " + txtId_hor.getText() + "?", "OS", JOptionPane.YES_NO_OPTION);
+            System.out.println(txtId_hor.getText());
+            int confirma = JOptionPane.showConfirmDialog(null, "Confirma a impresão do agendamento número " + txtId_hor.getText() + "?", "os", JOptionPane.YES_NO_OPTION);
             if (confirma == JOptionPane.YES_OPTION) {
                 // imprimindo relatorio com framework JasperReport
                 try {
+                    conexao.conectar();
                     // usando a class HashMap para criar um filtro
                     HashMap filtro = new HashMap();
-                    filtro.put("os", Integer.parseInt(txtId_hor.getText()));
+                    Integer id_hor = Integer.parseInt(txtId_hor.getText());
+                    System.out.println(id_hor);
+                    filtro.put("os", id_hor);
+                    System.out.println(filtro);
                     // "os" tem que ser igual à variavel criada no Jaspersoft
 
                     // usuando a classe JasperPrint para preparar a impressoa do relatorio
@@ -451,6 +456,11 @@ public class Tela_Hor extends javax.swing.JInternalFrame {
 
         txtId_hor.setToolTipText("número do agendamento");
         txtId_hor.setEnabled(false);
+        txtId_hor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtId_horActionPerformed(evt);
+            }
+        });
 
         cbbSer_hor.setMaximumRowCount(16);
         cbbSer_hor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione" }));
@@ -848,6 +858,10 @@ public class Tela_Hor extends javax.swing.JInternalFrame {
         Tela_Principal.desk.removeAll();
         Tela_Principal.desk.add(s);
     }//GEN-LAST:event_btnNew_serActionPerformed
+
+    private void txtId_horActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtId_horActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtId_horActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

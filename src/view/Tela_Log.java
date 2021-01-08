@@ -49,6 +49,7 @@ public class Tela_Log extends javax.swing.JFrame {
                     Tela_Principal.menRel.setEnabled(true);
                     Tela_Principal.menU.setEnabled(true);
                     Tela_Principal.btnUsu.setEnabled(true);
+                    Tela_Principal.MenuItem_edit_hor.setEnabled(true);
                     Tela_Principal.lblUsuario.setText(rs.getString(2));
                     Tela_Principal.lblUsuario.setForeground(Color.red);
                     Tela_Usu.txtIduser_sys.setText(rs.getString(1));

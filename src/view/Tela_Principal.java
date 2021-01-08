@@ -1,14 +1,9 @@
 package view;
 
 import Utils.ConexaoSQLITE;
-//import dal.ModuloConexao;
-//import java.sql.SQLException;
 import java.text.DateFormat;
 import java.util.Date;
-//import java.util.logging.Level;
-//import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-//import java.sql.*;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -65,6 +60,7 @@ public class Tela_Principal extends javax.swing.JFrame {
         menRel_ser = new javax.swing.JMenuItem();
         menOpc = new javax.swing.JMenu();
         menAju = new javax.swing.JMenuItem();
+        MenuItem_edit_hor = new javax.swing.JMenuItem();
         menSob = new javax.swing.JMenuItem();
         menS = new javax.swing.JMenu();
         menSai = new javax.swing.JMenuItem();
@@ -219,6 +215,17 @@ public class Tela_Principal extends javax.swing.JFrame {
         });
         menOpc.add(menAju);
 
+        MenuItem_edit_hor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        MenuItem_edit_hor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/novo.png"))); // NOI18N
+        MenuItem_edit_hor.setText("Atualizar horários");
+        MenuItem_edit_hor.setEnabled(false);
+        MenuItem_edit_hor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItem_edit_horActionPerformed(evt);
+            }
+        });
+        menOpc.add(MenuItem_edit_hor);
+
         menSob.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         menSob.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/sobre.png"))); // NOI18N
         menSob.setText("Sobre");
@@ -321,7 +328,6 @@ public class Tela_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_menSaiActionPerformed
 
     private void menUsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menUsuActionPerformed
-        
         u.setVisible(true);
         desk.removeAll();
         desk.add(u);
@@ -331,7 +337,7 @@ public class Tela_Principal extends javax.swing.JFrame {
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // as linhas a baixo substituem a lblData pela data atual do sistema
         Date data = new Date();
-        DateFormat formatador = DateFormat.getDateInstance(DateFormat.SHORT);
+        DateFormat formatador = DateFormat.getDateInstance(DateFormat.DEFAULT);
         lblData.setText(formatador.format(data));
     }//GEN-LAST:event_formWindowActivated
 
@@ -448,6 +454,11 @@ public class Tela_Principal extends javax.swing.JFrame {
         Tela_Usu.txtPes_usu.requestFocusInWindow();
     }//GEN-LAST:event_btnUsuActionPerformed
 
+    private void MenuItem_edit_horActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItem_edit_horActionPerformed
+        Tela_editHor teh = new Tela_editHor();
+        teh.setVisible(true);
+    }//GEN-LAST:event_MenuItem_edit_horActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -484,6 +495,7 @@ public class Tela_Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JMenuItem MenuItem_edit_hor;
     private javax.swing.JButton btnCli;
     private javax.swing.JButton btnHor;
     private javax.swing.JButton btnSer;

@@ -43,8 +43,8 @@ public class CriarBdSqlite {
                 + "usuario, fone, login, senha, perfil, hora_in, hora_out) "
                 + "VALUES ('admin', '(00)00000-0000', 'admin', '1234', 'admin', '', '');";
         String sql5 = "INSERT INTO horarios (horario) "
-                + "VALUES ('8:00'), ('8:15'), ('8:30'), ('8:45'), ('9:00'), "
-                + "('9:15'), ('9:30'), ('9:45'), ('10:00'), ('10:15'), "
+                + "VALUES ('08:00'), ('08:15'), ('08:30'), ('08:45'), ('09:00'), "
+                + "('09:15'), ('09:30'), ('09:45'), ('10:00'), ('10:15'), "
                 + "('10:30'), ('10:45'), ('11:00'), ('11:15'), ('11:30'), "
                 + "('11:45'), ('13:00'), ('13:15'), ('13:30'), ('13:45'), "
                 + "('14:00'), ('14:15'), ('14:30'), ('14:45'), ('15:00'), "
@@ -102,26 +102,16 @@ public class CriarBdSqlite {
             Statement stmt8 = this.conexaoSqlite.criarStatement();
             Statement stmt9 = this.conexaoSqlite.criarStatement();
             Statement stmt10 = this.conexaoSqlite.criarStatement();
-            stmt1.execute(sql);
-            System.out.println("tabela tbusuarios criada");
-            stmt2.execute(sql2);
-            System.out.println("tabela horarios criada");
-            stmt3.execute(sql3);
-            System.out.println("unique index horario");
-            stmt4.execute(sql4);
-            System.out.println("insert tabela tbusuarios");
-            stmt5.execute(sql5);
-            System.out.println("insert tabela horarios");
-            stmt6.execute(sql6);
-            System.out.println("tabela tbservicos criada");
-            stmt7.execute(sql7);
-            System.out.println("tabela horarios_agendados criada");
-            stmt8.execute(sql8);
-            System.out.println("tabela tbclientes criada");
-            stmt9.execute(sql9);
-            System.out.println("unique index horarios_agendados");
+            stmt1.execute(sql);            
+            stmt2.execute(sql2);          
+            stmt3.execute(sql3);           
+            stmt4.execute(sql4);           
+            stmt5.execute(sql5);         
+            stmt6.execute(sql6);      
+            stmt7.execute(sql7);           
+            stmt8.execute(sql8);      
+            stmt9.execute(sql9);         
             stmt10.execute(sql10);
-            System.out.println("tabela tbhorarios criada");
 
         } catch (SQLException e) {
             System.out.println(e);
