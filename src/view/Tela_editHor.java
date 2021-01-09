@@ -25,7 +25,7 @@ public class Tela_editHor extends javax.swing.JFrame {
         initComponents();
         conexao.conectar();
         popula_tabela();
-        txt_horario.setFocusable(true);
+        //txt_horario.setFocusable(true);
     }
 
     private void limpar() {
@@ -34,12 +34,10 @@ public class Tela_editHor extends javax.swing.JFrame {
 
     // metodo para adicionar novo usuario
     public void adicionar() {
-        conexao.conectar();
         String sql = "insert into horarios(horario) values(?)";
         try {
             pst = conexao.criarPreparedStatement(sql);
             pst.setString(1, txt_horario.getText());
-            System.out.println(txt_horario.getText());
 
             // validação dos campos obrigatorios
             if (txt_horario.getText().isEmpty() || txt_horario.getText().trim().length() < 5) {
@@ -53,7 +51,7 @@ public class Tela_editHor extends javax.swing.JFrame {
                 // a estrutura abaixo é usada para confirmar a insersão de dados
                 int adicionado = pst.executeUpdate();  // retorna 1 ou 0
                 if (adicionado > 0) {
-                    JOptionPane.showMessageDialog(null, "Usuário adicionado com sucesso!");
+                    //JOptionPane.showMessageDialog(null, "Horário adicionado com sucesso!");
                     this.limpar();
                     this.popula_tabela();
                 }
@@ -75,8 +73,8 @@ public class Tela_editHor extends javax.swing.JFrame {
     // metodo para remover usuário do banco de dados
     private void remover() {
         if (!txt_horario.getText().isEmpty()) {
-            int confirma = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja remover este horário?", "Atenção", JOptionPane.YES_NO_OPTION);
-            if (confirma == JOptionPane.YES_OPTION) {
+            //int confirma = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja remover este horário?", "Atenção", JOptionPane.YES_NO_OPTION);
+            //if (confirma == JOptionPane.YES_OPTION) {
                 String sql = "delete from horarios where horario=?";
                 try {
                     pst = conexao.criarPreparedStatement(sql);
@@ -92,7 +90,7 @@ public class Tela_editHor extends javax.swing.JFrame {
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(null, e);
                 }
-            }
+            //}
         } else {
             JOptionPane.showMessageDialog(null, "Selecione um horário para poder excluir!");
         }

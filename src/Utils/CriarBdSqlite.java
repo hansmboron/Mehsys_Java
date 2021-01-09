@@ -88,6 +88,15 @@ public class CriarBdSqlite {
                 + "	FOREIGN KEY(id_ser) REFERENCES tbservicos(id),"
                 + "	PRIMARY KEY(id AUTOINCREMENT)"
                 + ");";
+        String sql11 = "INSERT INTO tbclientes ("
+                + "nome, sexo, cpf, endereco, fone) "
+                + "VALUES ('teste deletar', 'Indefinido', '000.000.000-00', '', '(00)00000-0000');";
+        String sql12 = "INSERT INTO tbservicos ("
+                + "nome, usuario, valor, duracao) "
+                + "VALUES ('teste deletar', '', 'R$0.020,00', '0:10min');";
+        String sql13 = "INSERT INTO tbhorarios ("
+                + "cliente, servico, data, horario, profissional, id_ser) "
+                + "VALUES ('teste deletar', 'teste deletar  - 1', '10/01/2021', '09:00', 'admin', '1');";
 
         // executando o sql de criar tabelas
         try {
@@ -102,16 +111,22 @@ public class CriarBdSqlite {
             Statement stmt8 = this.conexaoSqlite.criarStatement();
             Statement stmt9 = this.conexaoSqlite.criarStatement();
             Statement stmt10 = this.conexaoSqlite.criarStatement();
-            stmt1.execute(sql);            
-            stmt2.execute(sql2);          
-            stmt3.execute(sql3);           
-            stmt4.execute(sql4);           
-            stmt5.execute(sql5);         
-            stmt6.execute(sql6);      
-            stmt7.execute(sql7);           
-            stmt8.execute(sql8);      
-            stmt9.execute(sql9);         
+            Statement stmt11 = this.conexaoSqlite.criarStatement();
+            Statement stmt12 = this.conexaoSqlite.criarStatement();
+            Statement stmt13 = this.conexaoSqlite.criarStatement();
+            stmt1.execute(sql);
+            stmt2.execute(sql2);
+            stmt3.execute(sql3);
+            stmt4.execute(sql4);
+            stmt5.execute(sql5);
+            stmt6.execute(sql6);
+            stmt7.execute(sql7);
+            stmt8.execute(sql8);
+            stmt9.execute(sql9);
             stmt10.execute(sql10);
+            stmt11.execute(sql11);
+            stmt12.execute(sql12);
+            stmt13.execute(sql13);
 
         } catch (SQLException e) {
             System.out.println(e);

@@ -311,7 +311,6 @@ public class Tela_Hor extends javax.swing.JInternalFrame {
     // imprimindo uma ordem se serviço
     private void imprimir_age() {
         if (!txtId_hor.getText().isEmpty()) {
-            System.out.println(txtId_hor.getText());
             int confirma = JOptionPane.showConfirmDialog(null, "Confirma a impresão do agendamento número " + txtId_hor.getText() + "?", "os", JOptionPane.YES_NO_OPTION);
             if (confirma == JOptionPane.YES_OPTION) {
                 // imprimindo relatorio com framework JasperReport
@@ -320,9 +319,9 @@ public class Tela_Hor extends javax.swing.JInternalFrame {
                     // usando a class HashMap para criar um filtro
                     HashMap filtro = new HashMap();
                     Integer id_hor = Integer.parseInt(txtId_hor.getText());
-                    System.out.println(id_hor);
+                    //System.out.println(id_hor);
                     filtro.put("os", id_hor);
-                    System.out.println(filtro);
+                    //System.out.println(filtro);
                     // "os" tem que ser igual à variavel criada no Jaspersoft
 
                     // usuando a classe JasperPrint para preparar a impressoa do relatorio
@@ -758,21 +757,6 @@ public class Tela_Hor extends javax.swing.JInternalFrame {
         setBounds(0, 0, 670, 568);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnNov_horActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNov_horActionPerformed
-        adicionar();
-        pesquisar_cli();
-    }//GEN-LAST:event_btnNov_horActionPerformed
-
-    private void btnEdi_horActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdi_horActionPerformed
-        alterar();
-        pesquisar_cli();
-    }//GEN-LAST:event_btnEdi_horActionPerformed
-
-    private void btnDel_horActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDel_horActionPerformed
-        remover();
-        pesquisar_cli();
-    }//GEN-LAST:event_btnDel_horActionPerformed
-
     private void txtPesC_horKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesC_horKeyReleased
         pesquisar_cli();
     }//GEN-LAST:event_txtPesC_horKeyReleased
@@ -789,40 +773,13 @@ public class Tela_Hor extends javax.swing.JInternalFrame {
         setar_campos();
     }//GEN-LAST:event_tblHorMouseClicked
 
-    private void btnLimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimActionPerformed
-        limpar();
-    }//GEN-LAST:event_btnLimActionPerformed
-
-    private void btnImp_horActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImp_horActionPerformed
-        imprimir_age();
-    }//GEN-LAST:event_btnImp_horActionPerformed
-
     private void btnPesD_horActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesD_horActionPerformed
         pesquisar_data();
     }//GEN-LAST:event_btnPesD_horActionPerformed
 
-    private void txtCli_horKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCli_horKeyReleased
-        popula_lisC();
-    }//GEN-LAST:event_txtCli_horKeyReleased
-
-    private void lisCli_horMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lisCli_horMouseClicked
-        txtCli_hor.setText((String) lisCli_hor.getSelectedValue());
-        lisCli_hor.setVisible(false);
-    }//GEN-LAST:event_lisCli_horMouseClicked
-
-    private void cbbSer_horMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbbSer_horMouseClicked
-        
-    }//GEN-LAST:event_cbbSer_horMouseClicked
-
     private void txtPesD_horKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesD_horKeyReleased
         pesquisar_data();
     }//GEN-LAST:event_txtPesD_horKeyReleased
-
-    private void btnCarregarhorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarregarhorActionPerformed
-        String nome = (String) cbbPro_hor.getSelectedItem();
-        String data = txtDat_hor.getText();
-        preencher_horarios(nome, data);
-    }//GEN-LAST:event_btnCarregarhorActionPerformed
 
     private void tblHorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblHorKeyPressed
         JOptionPane.showMessageDialog(null, "Não edite a tabela, pois por aqui ela não será alterada no banco de dados!");
@@ -833,6 +790,39 @@ public class Tela_Hor extends javax.swing.JInternalFrame {
     private void tblHorInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_tblHorInputMethodTextChanged
 
     }//GEN-LAST:event_tblHorInputMethodTextChanged
+
+    private void btnNew_serActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNew_serActionPerformed
+        Tela_Ser s = new Tela_Ser();
+        s.setVisible(true);
+        Tela_Principal.desk.removeAll();
+        Tela_Principal.desk.add(s);
+    }//GEN-LAST:event_btnNew_serActionPerformed
+
+    private void btnNew_cliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNew_cliActionPerformed
+        Tela_Cli c = new Tela_Cli();
+        c.setVisible(true);
+        Tela_Principal.desk.removeAll();
+        Tela_Principal.desk.add(c);
+    }//GEN-LAST:event_btnNew_cliActionPerformed
+
+    private void btnCarregarhorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarregarhorActionPerformed
+        String nome = (String) cbbPro_hor.getSelectedItem();
+        String data = txtDat_hor.getText();
+        preencher_horarios(nome, data);
+    }//GEN-LAST:event_btnCarregarhorActionPerformed
+
+    private void btnImp_horActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImp_horActionPerformed
+        imprimir_age();
+    }//GEN-LAST:event_btnImp_horActionPerformed
+
+    private void txtCli_horKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCli_horKeyReleased
+        popula_lisC();
+    }//GEN-LAST:event_txtCli_horKeyReleased
+
+    private void lisCli_horMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lisCli_horMouseClicked
+        txtCli_hor.setText((String) lisCli_hor.getSelectedValue());
+        lisCli_hor.setVisible(false);
+    }//GEN-LAST:event_lisCli_horMouseClicked
 
     private void cbbSer_horActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbbSer_horActionPerformed
         try {
@@ -845,23 +835,32 @@ public class Tela_Hor extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_cbbSer_horActionPerformed
 
-    private void btnNew_cliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNew_cliActionPerformed
-        Tela_Cli c = new Tela_Cli();
-        c.setVisible(true);
-        Tela_Principal.desk.removeAll();
-        Tela_Principal.desk.add(c);
-    }//GEN-LAST:event_btnNew_cliActionPerformed
+    private void cbbSer_horMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbbSer_horMouseClicked
 
-    private void btnNew_serActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNew_serActionPerformed
-        Tela_Ser s = new Tela_Ser();
-        s.setVisible(true);
-        Tela_Principal.desk.removeAll();
-        Tela_Principal.desk.add(s);
-    }//GEN-LAST:event_btnNew_serActionPerformed
+    }//GEN-LAST:event_cbbSer_horMouseClicked
 
     private void txtId_horActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtId_horActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtId_horActionPerformed
+
+    private void btnLimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimActionPerformed
+        limpar();
+    }//GEN-LAST:event_btnLimActionPerformed
+
+    private void btnDel_horActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDel_horActionPerformed
+        remover();
+        pesquisar_cli();
+    }//GEN-LAST:event_btnDel_horActionPerformed
+
+    private void btnEdi_horActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdi_horActionPerformed
+        alterar();
+        pesquisar_cli();
+    }//GEN-LAST:event_btnEdi_horActionPerformed
+
+    private void btnNov_horActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNov_horActionPerformed
+        adicionar();
+        pesquisar_cli();
+    }//GEN-LAST:event_btnNov_horActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -895,7 +894,7 @@ public class Tela_Hor extends javax.swing.JInternalFrame {
     private javax.swing.JTable tblHor;
     private javax.swing.JTextField txtCli_hor;
     private javax.swing.JFormattedTextField txtDat_hor;
-    public static javax.swing.JTextField txtId_hor;
+    private javax.swing.JTextField txtId_hor;
     private javax.swing.JTextField txtId_ser;
     public static javax.swing.JTextField txtPesC_hor;
     private javax.swing.JTextField txtPesD_hor;

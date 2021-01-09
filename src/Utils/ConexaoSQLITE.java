@@ -22,7 +22,7 @@ public class ConexaoSQLITE {
         try {
             Class.forName(driver);
             this.conexao = DriverManager.getConnection(url);
-            System.out.println("Conectado");
+            //System.out.println("Conectado");
             return true;
         } catch (ClassNotFoundException | SQLException e) {
             return false;
@@ -35,7 +35,7 @@ public class ConexaoSQLITE {
             if (this.conexao.isClosed() == false) {
                 this.conexao.close();
             }
-            System.out.println("desconectado");
+            //System.out.println("desconectado");
         } catch (SQLException e) {
 
             System.err.println(e.getMessage());

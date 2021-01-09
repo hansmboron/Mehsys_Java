@@ -78,7 +78,7 @@ public class Tela_Principal extends javax.swing.JFrame {
         lblUsuario.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
         lblUsuario.setText("Usuário");
 
-        lblData.setFont(new java.awt.Font("Noto Sans", 1, 24)); // NOI18N
+        lblData.setFont(new java.awt.Font("Noto Sans", 1, 20)); // NOI18N
         lblData.setText("Data");
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo_gra.png"))); // NOI18N
@@ -303,7 +303,7 @@ public class Tela_Principal extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnSer)
                             .addComponent(btnUsu))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()

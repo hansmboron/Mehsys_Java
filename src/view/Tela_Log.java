@@ -115,6 +115,7 @@ public class Tela_Log extends javax.swing.JFrame {
         jLabel2.setText("Senha:");
 
         txtUsuario.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
+        txtUsuario.setToolTipText("admin");
         txtUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtUsuarioKeyPressed(evt);
@@ -122,6 +123,7 @@ public class Tela_Log extends javax.swing.JFrame {
         });
 
         txtSenha.setFont(new java.awt.Font("Noto Sans", 1, 13)); // NOI18N
+        txtSenha.setToolTipText("1234");
         txtSenha.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtSenhaKeyPressed(evt);
